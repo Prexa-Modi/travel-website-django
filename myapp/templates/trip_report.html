@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+            text-align: center; /* Centering headings */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td.description {
+            width: 180px; /* Setting width for description column */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adventour</h1>
+        <h1>{{ title }}</h1>
+        <p style="text-align: center;">Generated on: {{ current_datetime }}</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Tour Package</th>
+                    <th>Duration</th>
+                    <th>Category</th>
+                    <th>Offers</th>
+                    <th>Transport Mode</th>
+                    <th>Trip Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for package in trip_data %}
+                <tr>
+                    <td>{{ package.name }}</td>
+                    <td class="description">{{ package.description }}</td>
+                    <td>{{ package.price }}</td>
+                    <td>{{ package.tour_package }}</td>
+                    <td>{{ package.duration }}</td>
+                    <td>{{ package.category }}</td>
+                    <td>{{ package.offers }}</td>
+                    <td>{{ package.transport_mode }}</td>
+                    <td><img src="../media/{{ package.tripimage }}" alt="image" class=""></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

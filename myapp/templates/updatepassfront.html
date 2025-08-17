@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Passenger</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-...etc..." crossorigin="anonymous">
+    <!-- Your custom CSS -->
+    <style>
+        body {
+            background: url(static/images/dancerc.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container-card {
+            position: relative;
+            top: 60%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-control {
+            border-color: #029e9d;
+        }
+        #submit {
+            background-color: #029e9d;
+            border-color: #029e9d;
+        }
+        #submit:hover {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2"> <!-- Adjust column classes for width -->
+                <div class="container-card">
+                    <h1 class="mb-4">Update Passenger</h1>
+                    <form action="/updatefrontpass/{{ passengerr.id }}/{{tripid}}" method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="fname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="fname" name="fname" value="{{ passengerr.first_name }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lname" name="lname" value="{{ passengerr.last_name }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select class="form-select" id="gender" name="gender">
+                                <option value="male" {% if passengerr.gender == 'male' %} selected {% endif %}>Male</option>
+                                <option value="female" {% if passengerr.gender == 'female' %} selected {% endif %}>Female</option>
+                                <option value="other" {% if passengerr.gender == 'other' %} selected {% endif %}>Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" value="{{ passengerr.age }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="aadhar" class="form-label">Aadhar Number</label>
+                            <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{ passengerr.aadhar_number }}">
+                        </div>
+                        <button type="submit" id="submit" class="btn btn-primary">Update Passenger</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-...etc..." crossorigin="anonymous"></script>
+    <!-- Your custom JavaScript -->
+    <script>
+        // Add your custom JavaScript code here
+    </script>
+</body>
+</html>

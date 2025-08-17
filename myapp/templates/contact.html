@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Adventour</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/LOGOFinal.png">
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--Custom CSS-->
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <!--Plugin CSS-->
+    <link href="static/css/plugin.css" rel="stylesheet" type="text/css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="static/fonts/line-icons.css" type="text/css">
+</head>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+    <!-- Preloader Ends -->
+
+    <!-- header starts -->
+    <header class="main_header_area">
+
+        <!-- Navigation Bar -->
+        <div class="header_menu" id="header_menu">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/about">
+                                <img src="static/images/LOGOFinal.png" alt="image" height="100" width="110">
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav" id="responsive-menu">
+                                <!--<li class="dropdown submenu active">-->
+                                <li><a href="/">Home<li/></a>
+
+                                <li><a href="/about">About Us</a></li>
+                                 <li><a href="/Contact">Contact Us</a></li>
+
+
+                                <li><a href="/destinationtrip">Destinations</a></li>
+
+
+
+
+
+
+                                                <li><a href="/gallerypage">Gallery </a></li>
+
+
+
+                                {% if request.session.logname %}
+    {% if request.session.logadmin %}
+        <!-- Admin specific links here -->
+    {% else %}
+        <li class="submenu dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/changepsswrdpage">Change Password</a></li>
+                                        <li><a href="/mbook">My Bookings</a></li>
+                                    </ul>
+                                </li>
+    {% endif %}
+{% endif %}
+
+
+
+                                <!--<li class="search-main"><a href="#search1" class="mt_search"><i class="fa fa-search"></i></a></li>-->
+                            </ul>
+                        </div>
+
+ <div class="register-login d-flex align-items-center" style="font-family:Poppins,sans-serif;">
+
+    {% if request.session.logname %}
+        {% if request.session.logadmin is False %}
+            <a href="/logout" class="me-3">
+                <i class="icon-user"></i> Logout
+            </a>
+            <h3 style="font-family:'Playfair Display', serif;">Hello,<br>{{ request.session.logname }}</h3>
+        {% else %}
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3">
+                <i class="icon-user"></i> Login/Register
+            </a>
+        {% endif %}
+    {% else %}
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3">
+            <i class="icon-user"></i> Login/Register
+        </a>
+    {% endif %}
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/tourpackage" class="nir-btn white">Book Now</a>
+
+</div>
+
+                        <div id="slicknav-mobile"></div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        <!-- Navigation Bar Ends -->
+    </header>
+    <!-- header ends -->
+
+    <!-- BreadCrumb Starts -->  
+    <section class="breadcrumb-main pb-20 pt-14" style="background-image: url(static/images/bg/bg1.jpg);">
+        <div class="section-shape section-shape1 top-inherit bottom-0" style="background-image: url(static/images/shape8.png);"></div>
+        <div class="breadcrumb-outer">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <h1 class="mb-3">Contact Us</h1>
+                    <nav aria-label="breadcrumb" class="d-block">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends --> 
+
+    <!-- contact starts -->
+{% if messages %}
+    {% for i in messages %}
+    <script>
+        alert('{{i}}');
+    </script>
+    {% endfor %}
+    {% endif %}
+    <section class="contact-main pt-6 pb-60">
+        <div class="container">
+            <div class="contact-info-main mt-0">
+                <div class="row">
+                    <div class="col-lg-10 col-offset-lg-1 mx-auto">
+                        <div class="contact-info bg-white">
+                            <div class="contact-info-title text-center mb-4 px-5">
+                                <h3 class="mb-1">INFORMATION ABOUT US</h3>
+                                <p class="mb-0">Know Our Services.</p>
+                            </div>
+                            <div class="contact-info-content row mb-1">
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center rounded">
+                                        <div class="info-icon mb-2">
+                                            <i class="fa fa-map-marker-alt theme"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h3>Office Location</h3>
+                                            <p class="m-0">H.O:8, Shivdeep Avenue, Opp Mony
+Hotel National Highway No-8,
+Narol, Isanpur, Ahmedabad</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center rounded">
+                                        <div class="info-icon mb-2">
+                                            <i class="fa fa-phone theme"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h3>Phone Number</h3>
+                                            <p class="m-0">99798 55749
+</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-12 mb-4">
+                                    <div class="info-item bg-lgrey px-4 py-5 border-all text-center rounded">
+                                        <div class="info-icon mb-2">
+                                            <i class="fa fa-envelope theme"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <h3>Email Address</h3>
+                                            <p class="m-0">ghoghatravels@gmail.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="contact-form1" class="contact-form">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="map rounded overflow-hiddenb rounded mb-md-4">
+                                            <div style="width: 100%">
+                                                <iframe height="600" src="static/images/map.png"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        
+                                        <div id="contactform-error-msg"></div>
+
+                                        <form method="post" action="/fetchcontactdata" name="contactform2" id="contactform2">
+                                            {% csrf_token %}
+                                            <div class="form-group mb-2">
+                                                <input type="text" name="firstname" class="form-control" id="fullname" placeholder="First Name">
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <input type="text" name="lastname" class="form-control" id="llastname" placeholder="Last Name">
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <input type="email" name="uemail"  class="form-control" id="email" placeholder="Email">
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <input type="number" name="uphone" class="form-control" id="phnumber" placeholder="Phone">
+                                            </div>
+                                            <div class="textarea mb-2">
+                                                <textarea name="ucomments" placeholder="Enter a message"></textarea>
+                                            </div>
+                                            <div class="comment-btn text-center">
+                                                <input type="submit" class="nir-btn" id="submit2" value="Send Message">
+                                            </div>
+                                        </form>
+
+                                         <script>
+                                             document.getElementById('contactform2').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Extract form data
+    const formData = new FormData(this);
+
+    // Check if any required fields are empty
+    let hasEmptyFields = false;
+    formData.forEach((value, key) => {
+        if (!value.trim()) {
+            hasEmptyFields = true;
+            return;
+        }
+    });
+
+    // If any required field is empty, show alert and return
+    if (hasEmptyFields) {
+        alert('Please fill in all the form details.');
+        return;
+    }
+     const phoneNumber = formData.get('uphone');
+        if (phoneNumber.length !== 10) {
+            alert('Please enter a valid 10-digit phone number.');
+            return;
+        }
+
+    // Send form data using AJAX
+    fetch('/fetchcontactdata', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(() => {
+        // Once the request is sent successfully, show the success message and redirect
+        alert('Your details have been submitted successfully!');
+        window.location.href = "/Contact";
+    })
+    .catch(error => {
+        // If there's an error, log it and show an error message
+        console.error('Error:', error);
+        alert('An error occurred while submitting the form. Please try again.');
+    });
+});
+                                         </script>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact Ends -->
+
+    <!-- footer starts -->
+    <footer class="pt-20 pb-4"  style="background-image: url(static/images/background_pattern.png);">
+        <div class="section-shape top-0" style="background-image: url(static/images/shape8.png);"></div>
+        <!-- Instagram starts -->
+       <!-- <div class="insta-main pb-10">
+            <div class="container">
+
+
+            </div>
+        </div>-->
+        <!-- Instagram ends -->
+        <div class="footer-upper pb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 pe-4" >
+                        <div class="footer-about">
+                            <img src="static/images/LOGOFinal.png" alt="">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<p class="mt-3 mb-3 white">
+                                Adventour .... Refreshing Every Trips
+                            </p>
+                            <ul>
+                                <li class="white"><strong>Contact:</strong> 9925163661 , 7383328007</li>
+                                <li class="white"><strong>Location:</strong> Isanpur, Ahmedabad, Gujarat, India</li>
+                                <li class="white"><strong>Email:</strong> ghoghatravels@gmail.com</li>
+                                <li class="white"><strong>Website:</strong> www.Adventour.com</li>
+                            </ul>
+                        </div>
+                    </div>
+<!-- col-lg-2 col-md-6 col-sm-12 mb-4 -->
+                    <div class="wlink">
+                        <div class="footer-links">
+                            <h3 class="white">Quick link</h3>
+                            <ul>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="/tourpackage">Tours & Packages</a></li>
+                                <li><a href="/privacy">Privacy Policy</a></li>
+                                <li><a href="/terms">Terms &amp; Conditions</a></li>
+                                <li><a href="/customerservice">Customer Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--<div class="col-lg-2 col-md-6 col-sm-12 mb-4">-->
+                    <!--<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Categories</h3>
+                            <ul>
+                              <li><a href="/about">Travel</a></li>
+                              <li><a href="about-us.html">Technology</a></li>
+                              <li><a href="about-us.html">Lifestyle</a></li>
+                              <li><a href="about-us.html">Destinations</a></li>
+                              <li><a href="about-us.html">Entertainment</a></li>
+                              <li><a href="about-us.html">Business</a></li>
+                            </ul>
+                        </div>
+                    </div>-->
+                    <!--<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Newsletter</h3>
+                            <div class="newsletter-form ">
+                                <p class="mb-3">Jin our community of over 200,000 global readers who receives emails filled with news, promotions, and other good stuff.</p>
+                                <form action="#" method="get" accept-charset="utf-8" class="border-0 d-flex align-items-center">
+                                    <input type="text" placeholder="Email Address">
+                                    <button class="nir-btn ms-2">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- footer ends -->
+    
+    <!-- Back to top start -->
+    <div id="back-to-top">
+        <a href="#"></a>
+    </div>
+    <!-- Back to top ends -->
+
+    <!-- search popup -->
+    <div id="search1">
+        <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+    <!-- login registration modal -->
+     <div class="modal fade log-reg" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="post-tabs">
+                        <!-- tab navs -->
+                        <ul class="nav nav-tabs nav-pills nav-fill" id="postsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button aria-controls="login" aria-selected="false" class="nav-link active"
+                                    data-bs-target="#login" data-bs-toggle="tab" id="login-tab" role="tab"
+                                    type="button">Login</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button aria-controls="register" aria-selected="true" class="nav-link"
+                                    data-bs-target="#register" data-bs-toggle="tab" id="register-tab" role="tab"
+                                    type="button">Register</button>
+                            </li>
+                        </ul>
+                        <!-- tab contents -->
+                        <div class="tab-content blog-full" id="postsTabContent">
+                            <!-- popular posts -->
+                            <div aria-labelledby="login-tab" class="tab-pane fade active show" id="login"
+                                role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="blog-image rounded">
+                                            <a href="#"
+                                                style="background-image: url(../static/images/travelgood.jpeg); height:450px"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h4 class="text-center border-b pb-2">Login</h4>
+                                        <div class="log-reg-button d-flex align-items-center justify-content-between">
+                                            <!--<button type="submit" class="btn btn-fb">
+                                                <i class="fab fa-facebook"></i> Login with Facebook
+                                            </button>-->
+                                            <!--<button type="submit" class="btn btn-google">
+                                                <i class="fab fa-google"></i> Login with Google
+                                            </button>-->
+                                        </div>
+                                        <!--<hr class="log-reg-hr position-relative my-4 overflow-visible">-->
+
+                                 <!--------------------- Login form ---------------------------------->
+
+
+                                        <form method="post" action="/checklogin" name="contactform2" id="contactform2">
+                                            {% csrf_token %}
+                                            <div class="form-group mb-2">
+                                                <input type="text" name="email" class="form-control" id="fname"
+                                                    placeholder="Email Address" required>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <input type="password" name="password" class="form-control"
+                                                    id="lpass" placeholder="Password" required maxlength="20">
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <input type="checkbox" class="custom-control-input" id="exampleCheck">
+                                                <label class="custom-control-label mb-0" for="exampleCheck1">Remember
+                                                    me</label>
+                                                <a class="float-end" href="/forgotpassword">Lost your password?</a>
+                                            </div>
+                                            <div class="comment-btn mb-2 pb-2 text-center border-b">
+                                                <button type="button" onclick="submitForm2()" class="nir-btn w-100">Login</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Recent posts -->
+                            <div aria-labelledby="register-tab" class="tab-pane fade" id="register" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="blog-image rounded">
+                                            <a href="#"
+                                                style="background-image: url(../static/images/indiac.jpg);"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h4 class="text-center border-b pb-2">Register</h4>
+                                        <div class="log-reg-button d-flex align-items-center justify-content-between">
+                                            <!--<button type="submit" class="btn btn-fb">
+                                                <i class="fab fa-facebook"></i> Login with Facebook
+                                            </button>
+                                            <button type="submit" class="btn btn-google">
+                                                <i class="fab fa-google"></i> Login with Google
+                                            </button>-->
+                                        </div>
+                                        <!--<hr class="log-reg-hr position-relative my-4 overflow-visible">-->
+
+                          <!------------------------------ Registration form ----------------------------------------->
+
+
+                                   <form method="post" action="/fetchsignupdata" name="contactform1" id="contactform1" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group mb-2">
+        <input type="text" name="username" class="form-control" id="fname1" placeholder="User Name">
+        <div class="error-message" id="errorUsername"></div>
+    </div>
+
+    <div class="form-group mb-2">
+        <input type="email" name="email" class="form-control" id="femail" placeholder="Email Address">
+        <div class="error-message" id="errorEmail"></div>
+    </div>
+
+    <div class="form-group mb-2">
+        <input type="password" name="password" class="form-control" id="lpass1" placeholder="Password">
+        <div class="error-message" id="errorPassword"></div>
+    </div>
+
+    <div class="form-group mb-2">
+        <input type="password" name="cpassword" class="form-control" id="lrepass" placeholder="Re-enter Password">
+        <div class="error-message" id="errorConfirmPassword"></div>
+    </div>
+
+    <div class="form-group mb-2 d-flex">
+        <input type="checkbox" class="custom-control-input" id="exampleCheck1" required>
+        <label class="custom-control-label mb-0 ms-1 lh-1" for="exampleCheck1">I have read and accept the Terms and Privacy Policy?</label>
+        <div class="error-message" id="errorTerms"></div>
+    </div>
+
+    <div class="comment-btn mb-2 pb-2 text-center border-b">
+        <button type="submit" class="nir-btn w-100" id="submitButton" onclick="submitForm()">Register</button>
+    </div>
+</form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- *Scripts* -->
+<script>
+    // Function to set login credentials in cookies or local storage
+    function setRememberMe(checked) {
+        if (checked) {
+            // Store login credentials in cookies or local storage
+            var email = document.getElementById('fname').value;
+            var password = document.getElementById('lpass').value;
+
+            // Example: Store in cookies
+            document.cookie = 'rememberMeEmail=' + email + '; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+            document.cookie = 'rememberMePassword=' + password + '; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+        } else {
+            // Remove stored login credentials
+            document.cookie = 'rememberMeEmail=; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            document.cookie = 'rememberMePassword=; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+        }
+    }
+
+    // Function to check if login credentials are stored
+    function getRememberMe() {
+        var cookies = document.cookie.split(';');
+
+        // Retrieve login credentials from cookies
+        var email = '';
+        var password = '';
+        cookies.forEach(function(cookie) {
+            var parts = cookie.trim().split('=');
+            if (parts[0] === 'rememberMeEmail') {
+                email = parts[1];
+            } else if (parts[0] === 'rememberMePassword') {
+                password = parts[1];
+            }
+        });
+
+        // Populate login fields if credentials are found
+        document.getElementById('fname').value = email;
+        document.getElementById('lpass').value = password;
+    }
+
+    // Add event listener to "Remember Me" checkbox
+    document.getElementById('exampleCheck').addEventListener('change', function() {
+        setRememberMe(this.checked);
+    });
+
+    // Populate login fields if "Remember Me" is checked
+    getRememberMe();
+</script>
+
+
+<script>
+    // function to submit form
+   // function submitForm()
+   // {
+   //     document.getElementById("contactform1").submit();
+  //  }
+
+    function submitForm2()
+    {
+      document.getElementById("contactform2").submit();
+    }
+</script>
+
+<script>
+/*
+function submitForm() {
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('contactform1').addEventListener('submit', function(event) {
+            var isValid = true;
+
+            // Reset all previous error messages
+            var errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(function(element) {
+                element.textContent = '';
+            });
+
+            // Validate Username field
+            if (!validateField('username')) {
+                isValid = false;
+            }
+
+            // Validate Email field
+            if (!validateField('email')) {
+                isValid = false;
+            }
+
+            // Validate Password field
+            if (!validateField('password')) {
+                isValid = false;
+            }
+
+            // Validate Confirm Password field
+            if (!validateField('cpassword')) {
+                isValid = false;
+            }
+
+            // Validate Terms and Privacy Policy checkbox
+            if (!validateTerms()) {
+                isValid = false;
+            }
+
+            // Prevent form submission if validation fails
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission
+            } else {
+                // If validation passes, submit the form
+                document.getElementById("contactform1").submit();
+            }
+        });
+
+        function validateField(fieldName) {
+            var fieldValue = document.forms['contactform1'][fieldName].value.trim();
+            var errorElement = document.getElementById('error' + capitalizeFirstLetter(fieldName));
+
+            if (fieldValue === '') {
+                errorElement.textContent = capitalizeFirstLetter(fieldName) + ' cannot be empty.';
+                return false;
+            } else if (fieldName === 'username') {
+                return validateUsername(fieldValue, errorElement);
+            } else if (fieldName === 'password') {
+                return validatePassword(fieldValue, errorElement);
+            } else if (fieldName === 'cpassword') {
+                return validateConfirmPassword(fieldValue, errorElement);
+            } else {
+                return true;
+            }
+        }
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        function validateUsername(username, errorElement) {
+            var usernameRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,30}$/;
+            var specialCharCount = (username.match(/[^\w\s]/g) || []).length;
+
+            if (username.length < 5 || username.length > 30) {
+                errorElement.textContent = 'Username length must be between 5 and 30 characters.';
+                return false;
+            } else if (specialCharCount < 3) {
+                errorElement.textContent = 'Username must contain at least 3 special characters.';
+                return false;
+            } else if (!usernameRegex.test(username)) {
+                errorElement.textContent = 'Username can only contain letters, numbers, and special characters.';
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+
+
+
+        function validatePassword(password, errorElement) {
+            var specialCharCount = (password.match(/[^\w\s]/g) || []).length;
+            var numberCount = (password.match(/\d/g) || []).length;
+
+            if (password.length < 3 || password.length > 6) {
+                errorElement.textContent = 'Password length must be between 3 and 6 characters.';
+                return false;
+            } else if (specialCharCount < 1 || specialCharCount > 3) {
+                errorElement.textContent = 'Password must contain 1 to 3 special characters.';
+                return false;
+            } else if (numberCount < 2 || numberCount > 4) {
+                errorElement.textContent = 'Password must contain 2 to 4 numbers.';
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function validateConfirmPassword(confirmPassword, errorElement) {
+            var password = document.forms['contactform1']['password'].value;
+
+            if (confirmPassword === '') {
+                errorElement.textContent = 'Confirm Password cannot be empty.';
+                return false;
+            } else if (confirmPassword !== password) {
+                errorElement.textContent = 'Passwords do not match.';
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function validateTerms() {
+            var termsCheckbox = document.getElementById('exampleCheck1');
+            var errorElement = document.getElementById('errorTerms');
+
+            if (!termsCheckbox.checked) {
+                errorElement.textContent = 'Please accept the Terms and Privacy Policy.';
+                return false;
+            } else {
+                return true;
+            }
+        }
+    });
+}*/
+
+function submitForm() {
+    // Trigger validation process
+    var isValid = validateForm();
+
+    // If validation passes, submit the form
+    if (isValid) {
+        document.getElementById('contactform1').submit();
+    }
+}
+
+// Function to validate the form
+function validateForm() {
+    var isValid = true;
+
+    // Reset all previous error messages
+    var errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(function(element) {
+        element.textContent = '';
+    });
+
+    // Function to validate a single field
+function validateField(fieldName) {
+    var fieldValue = document.forms['contactform1'][fieldName].value.trim();
+    var errorElement = document.getElementById('error' + capitalizeFirstLetter(fieldName));
+
+    if (fieldValue === '') {
+        errorElement.textContent = capitalizeFirstLetter(fieldName) + ' cannot be empty.';
+        return false;
+    } else if (fieldName === 'username') {
+        return validateUsername(fieldValue, errorElement);
+    } else if (fieldName === 'password') {
+        return validatePassword(fieldValue, errorElement);
+    } else if (fieldName === 'cpassword') {
+        return validateConfirmPassword(fieldValue, errorElement);
+    } else {
+        return true;
+    }
+}
+
+    // Validate Username field
+    if (!validateField('username')) {
+        isValid = false;
+    }
+
+    // Validate Email field
+    if (!validateField('email')) {
+        isValid = false;
+    }
+
+    // Validate Password field
+    if (!validateField('password')) {
+        isValid = false;
+    }
+
+    // Validate Confirm Password field
+    if (!validateField('cpassword')) {
+        isValid = false;
+    }
+
+    // Validate Terms and Privacy Policy checkbox
+    if (!validateTerms()) {
+        isValid = false;
+    }
+
+    // Return the overall validation result
+    return isValid;
+}
+
+
+
+// Function to validate the Terms and Privacy Policy checkbox
+function validateTerms() {
+    var termsCheckbox = document.getElementById('exampleCheck1');
+    var errorElement = document.getElementById('errorTerms');
+
+    if (!termsCheckbox.checked) {
+        errorElement.textContent = 'Please accept the Terms and Privacy Policy.';
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+
+// Function to validate the username
+function validateUsername(username, errorElement) {
+    var usernameRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,30}$/;
+    var specialCharCount = (username.match(/[^\w\s]/g) || []).length;
+
+    if (username.length < 5 || username.length > 30) {
+        errorElement.textContent = 'Username length must be between 5 and 30 characters.';
+        return false;
+    } else if (specialCharCount < 3) {
+        errorElement.textContent = 'Username must contain at least 3 special characters.';
+        return false;
+    } else if (!usernameRegex.test(username)) {
+        errorElement.textContent = 'Username should contain letters, numbers, and special characters.';
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/*
+// Function to validate the password
+function validatePassword(password, errorElement) {
+    var specialCharCount = (password.match(/[^\w\s]/g) || []).length;
+    var numberCount = (password.match(/\d/g) || []).length;
+
+    if (password.length < 3 || password.length > 6) {
+        errorElement.textContent = 'Password length must be between 3 and 6 characters.';
+        return false;
+    } else if (specialCharCount < 1 || specialCharCount > 3) {
+        errorElement.textContent = 'Password must contain 1 to 3 special characters.';
+        return false;
+    } else if (numberCount < 2 || numberCount > 4) {
+        errorElement.textContent = 'Password must contain 2 to 4 numbers.';
+        return false;
+    } else {
+        return true;
+    }
+}*/
+
+function validatePassword(password, errorElement) {
+    var specialCharCount = (password.match(/[^\w\s]/g) || []).length;
+    var numberCount = (password.match(/\d/g) || []).length;
+
+    if (password.length < 3 || password.length > 6) {
+        errorElement.textContent = 'Password length must be between 3 and 6 characters.';
+        console.log('Password length error:', errorElement.textContent);
+        return false;
+    } else if (specialCharCount < 1 || specialCharCount > 3) {
+        errorElement.textContent = 'Password must contain 1 to 3 special characters.';
+        console.log('Special characters error:', errorElement.textContent);
+        return false;
+    } else if (numberCount < 2 || numberCount > 4) {
+        errorElement.textContent = 'Password must contain 2 to 4 numbers.';
+        console.log('Numbers error:', errorElement.textContent);
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+// Function to validate the confirm password
+function validateConfirmPassword(confirmPassword, errorElement) {
+    var password = document.forms['contactform1']['password'].value;
+
+    if (confirmPassword === '') {
+        errorElement.textContent = 'Confirm Password cannot be empty.';
+        return false;
+    } else if (confirmPassword !== password) {
+        errorElement.textContent = 'Passwords do not match.';
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/*
+// Function to validate the confirm password
+function validateConfirmPassword(confirmPassword, errorElement) {
+    var password = document.forms['contactform1']['password'].value;
+
+    if (confirmPassword === '') {
+        errorElement.textContent = 'Confirm Password cannot be empty.';
+        console.log('Confirm Password error:', errorElement.textContent);
+        return false;
+    } else if (confirmPassword !== password) {
+        errorElement.textContent = 'Passwords do not match.';
+        console.log('Passwords do not match error:', errorElement.textContent);
+        return false;
+    } else {
+        return true;
+    }
+}*/
+
+// Function to capitalize the first letter of a string
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function submitdrop(){
+    document.getElementById("search").submit();
+}
+
+
+
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the select element
+        var selectElement = document.getElementById("packageSelect");
+
+        // Add event listener for change event
+        selectElement.addEventListener("change", function() {
+            // Get the selected option's value
+            var selectedValue = selectElement.value;
+
+            // Construct the URL based on the selected value
+            var url = "/tourlist/" + selectedValue;
+
+            // Set the action attribute of the form to the constructed URL
+            document.getElementById("search").action = url;
+        });
+    });
+</script>
+    <script src="static/js/jquery-3.5.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/particles.js"></script>
+    <script src="static/js/particlerun.js"></script>
+    <script src="static/js/plugin.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/custom-swiper.js"></script>
+    <script src="static/js/custom-nav.js"></script>
+</body>
+</html>

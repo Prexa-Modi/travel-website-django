@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Adventour</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/LOGOFinal.png">
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--Custom CSS-->
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <!--Plugin CSS-->
+    <link href="static/css/plugin.css" rel="stylesheet" type="text/css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="static/fonts/line-icons.css" type="text/css">
+    <style>
+        /* Custom CSS for button color */
+        #addPassenger {
+            background-color: #029e9d;
+            border-color: #029e9d;
+        }
+
+        #addPassenger:hover {
+            background-color:#ffc107;
+            border-color: #ffc107;
+        }
+
+    </style>
+    <style>
+
+   .wlink .footer-links ul {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.wlink .footer-links ul li {
+    margin-right:5px; /* Adjust spacing between items */
+}
+
+.wlink .footer-links ul li:not(:last-child)::after {
+    content: "|"; /* Add vertical bar after each link except the last one */
+    margin-left: 20px; /* Adjust spacing as needed */
+    color: #fff; /* Set color of separator */
+    margin-right: 10px; /* Adjust spacing as needed */
+    padding-left: 10px; /* Add space before the separator */
+    padding-right: 5px; /* Add space after the separator */
+}
+
+
+
+        /* Change color and font size of top navigation links */
+        .header_menu .navbar-nav > li > a {
+            color: #029e9d;; /* Change color to your desired color */
+            font-size: 16px; /* Change font size to your desired size */
+            font-weight: 1000;
+        }
+
+        /* Change hover color of top navigation links */
+        .header_menu .navbar-nav > li > a:hover {
+            color: #ff0000; /* Change hover color to your desired color */
+        }
+
+
+
+
+    </style>
+</head>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+    <!-- Preloader Ends -->
+
+    <!-- header starts -->
+    <header class="main_header_area">
+
+        <!-- Navigation Bar -->
+        <div class="header_menu" id="header_menu">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/about">
+                                <img src="../static/images/LOGOFinal.png" alt="image" height="100" width="110">
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav" id="responsive-menu">
+                                <!--<li class="dropdown submenu active">-->
+                                <li><a href="/">Home<li/></a>
+
+                                <li><a href="/about">About Us</a></li>
+                                 <li><a href="/Contact">Contact Us</a></li>
+
+
+                                <li><a href="/destinationtrip">Destinations</a></li>
+
+
+
+
+                                        <!--<li class="submenu dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tour Grid<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="tour-grid.html">Tour Grid Leftsidebar</a></li>
+                                                <li><a href="tour-grid1.html">Tour Grid Rightsidebar</a></li>
+                                                <li><a href="tour-grid2.html">Tour Grid Fullwidth</a></li>
+                                            </ul>
+                                        </li>-->
+                                        <!--<li class="submenu dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tour Single<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="tour-single.html">Tour Single Leftsidebar</a></li>
+                                                <li><a href="tour-single1.html">Tour Single Rightsidebar</a></li>
+                                                <li><a href="tour-single2.html">Tour Single Fullwidth</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>-->
+                               <!-- <li class="submenu dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="team.html">Our Guide</a></li>
+                                        <li><a href="/booking">Booking</a></li>
+                                        <li><a href="confirmation.html">confirmation</a></li>
+                                        <li class="submenu dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <ul class="dropdown-menu">-->
+
+                                <!--<li><a href="services-detail.html">Service Detail</a></li>-->
+                                            <!--</ul>
+                                        </li>-->
+                                        <!--<li class="submenu dropdown">
+                                            <a href="gallery.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <ul class="dropdown-menu">-->
+                                                <!--<li><a href="gallery.html">Gallery</a></li>-->
+
+
+                                                <li><a href="/gallerypage">Gallery </a></li>
+
+                                               <!-- {% if request.session.logname %}
+                                                 <li><a href="/changepsswrdpage">Change password</a></li>
+                                                <li><a href="/gallerypage">My Bookings </a></li>
+                                                {% endif %}-->
+
+                                {% if request.session.logname %}
+    {% if request.session.logadmin %}
+        <!-- Admin specific links here -->
+    {% else %}
+        <li class="submenu dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/changepsswrdpage">Change Password</a></li>
+                                        <li><a href="/gallerypage">My Bookings</a></li>
+                                    </ul>
+                                </li>
+    {% endif %}
+{% endif %}
+
+
+                                           <!-- </ul>
+                                        </li>-->
+                                        <!--<li class="submenu dropdown">
+                                            <a href="404.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Error<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="404.html">Error Page 1</a></li>
+                                                <li><a href="404-1.html">Error Page 2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="login.html">Login|Register</a></li>
+                                        <li><a href="comingsoon.html">Coming Soon</a></li>
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="faq.html">Faq</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="dashboard/dashboard.html">Dashboard</a></li>
+                                    </ul>
+                                </li>-->
+                                <!--<li class="submenu dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="submenu dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog Grid<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="post-grid-1.html">Blog Grid 1</a></li>
+                                                <li><a href="post-grid-2.html">Blog Grid 2</a></li>
+                                                <li><a href="post-grid-3.html">Blog Grid 3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="submenu dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog List<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="post-list-1.html">Blog List 1</a></li>
+                                                <li><a href="post-list-2.html">Blog List 2</a></li>
+                                                <li><a href="post-list-3.html">Blog List 3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="submenu dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog Single<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="detail-1.html">Blog Single 1</a></li>
+                                                <li><a href="detail-2.html">Blog Single 2</a></li>
+                                                <li><a href="detail-3.html">Blog Single 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>-->
+                                <!--<li class="search-main"><a href="#search1" class="mt_search"><i class="fa fa-search"></i></a></li>-->
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                        <!--<div class="register-login d-flex align-items-center" style="font-family:Poppins,sans-serif;">
+
+                            {% if request.session.logname %}
+                                {% if request.session.logadmin is False %}
+                            <a href="/logout"  class="me-3">
+                                <i class="icon-user"></i> Logout
+                            </a>
+                                 {% endif %}
+                            {% else %}
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3">
+                                <i class="icon-user"></i> Login/Register
+                            </a>
+                            {% endif %}
+
+                            <a href="/tourpackage" class="nir-btn white">Book Now</a>
+
+                            {% if request.session.logadmin is True %}
+                            {% elif request.session.logname %}
+                            &nbsp;&nbsp;&nbsp;<h3 style="font-family:'Playfair Display', serif;">Hello, {{request.session.logname}}</h3>
+
+                            {% endif %}
+
+                        </div>-->
+ <div class="register-login d-flex align-items-center" style="font-family:Poppins,sans-serif;">
+
+    {% if request.session.logname %}
+        {% if request.session.logadmin is False %}
+            <a href="/logout" class="me-3">
+                <i class="icon-user"></i> Logout
+            </a>
+            <h3 style="font-family:'Playfair Display', serif;">Hello,<br>{{ request.session.logname }}</h3>
+        {% else %}
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3">
+                <i class="icon-user"></i> Login/Register
+            </a>
+        {% endif %}
+    {% else %}
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3">
+            <i class="icon-user"></i> Login/Register
+        </a>
+    {% endif %}
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/tourpackage" class="nir-btn white">Book Now</a>
+
+</div>
+
+                        <div id="slicknav-mobile"></div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        <!-- Navigation Bar Ends -->
+    </header>
+    <!-- header ends -->
+
+    <!-- BreadCrumb Starts -->  
+    <section class="breadcrumb-main pb-20 pt-14"  style="background-image: url(../static/images/keralagif.gif);height:500px">
+        <div class="section-shape section-shape1 top-inherit bottom-0" style="background-image: url(images/shape8.png);"></div>
+        <div class="breadcrumb-outer">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <h1 class="mb-3">Tour Packages</h1>
+                    <nav aria-label="breadcrumb" class="d-block">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Tour Package</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages</title>
+    <!-- Include Bootstrap CSS and any other necessary stylesheets -->
+    <link rel="stylesheet" href="path/to/bootstrap.min.css">
+    <!-- Include your custom stylesheets if any -->
+    <style>
+        /* Add your custom styles here */
+    </style>
+</head>
+<body>
+    <section class="trending pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                       <!-- <h4 class="mb-1 theme1">Top Pick</h4>-->
+
+                        <h2 class="mb-1"> <span class="theme">Tour Packages</span></h2>
+                        <p>Beautiful INDIA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for i in packagedata %}
+                <!-- Repeat this block for each tour package -->
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                    <div class="trend-item rounded box-shadow">
+                        <div class="trend-image position-relative">
+                            <img src="../media/{{i.pimage}}" alt="image" class="">
+                            <div class="color-overlay"></div>
+                        </div>
+                        <div class="trend-content p-4 pt-5 position-relative">
+
+                            <h5 class="theme mb-1"><i class="flaticon-location-pin"></i>{{i.state}}</h5>
+                            <h3 class="mb-1"><a href="/tourlist/{{i.id}}">{{i.name}}</a></h3>
+                            <!--<div class="rating-main d-flex align-items-center pb-2">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                                <span class="ms-2">(12)</span>
+                            </div>-->
+                            <!--<p class=" border-b pb-2 mb-2"></p>-->
+                           <!-- <div class="entry-meta">
+                                <div class="entry-author d-flex align-items-center">
+                                    <p class="mb-0"><span class="theme fw-bold fs-5">{{i.price}}</span> | Per person</p>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- End of tour package block -->
+            </div>
+        </div>
+    </section>
+    <!-- Include Bootstrap JS and any other necessary scripts -->
+    <script src="path/to/bootstrap.min.js"></script>
+    <!-- Include your custom scripts if any -->
+
+    <!-- top Destination starts -->
+    <!--<section class="trending pt-6 pb-0 bg-lgrey">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="payment-book">
+                        <div class="booking-box">
+                            <div class="customer-information mb-4">
+                                <h3 class="border-b pb-2 mb-2">Traveller Information</h3>
+                                <form class="mb-2">
+                                    <h5>Let us know who you are</h5>
+                                    <div class="container mt-5">
+                                    <h2>Passenger Details</h2>
+                                        <form action="/fetchpassenger" method="post" name="contactform1" id="contactform1" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div id="passengerDetails">
+
+        <div class="passenger-details row mb-4" id="passenger_1">
+            <div class="col-md-12">
+                <h4 id="passengerTitle_1">Passenger 1</h4>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="full_name_1">Full Name:</label>
+                    <input type="text" class="form-control" id="full_name_1" name="full_name_1" placeholder="Enter First name" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="last_name_1">Last Name:</label>
+                    <input type="text" class="form-control" id="last_name_1" name="last_name_1" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="age_1">Age:</label>
+                    <input type="number" class="form-control" id="age_1" name="age_1" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="gender_1">Gender:</label>
+                    <select class="form-control" id="gender_1" name="gender_1" required>
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="aadhar_1">Aadhar Card Number:</label>
+                    <input type="text" class="form-control" id="aadhar_1" name="aadhar_1" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="adult_child_1">Adult/Child:</label>
+                    <select class="form-control" id="adult_child_1" name="adult_child_1" required>
+                        <option value="">Select</option>
+                        <option value="adult">Adult</option>
+                        <option value="child">Child</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12 text-right">
+                <button type="button" class="btn btn-danger removePassenger" data-passenger="1">Remove Passenger</button>
+            </div>
+        </div>
+    </div>
+    <button type="button" id="addPassenger" class="btn btn-primary mt-3">Add Passenger</button>
+    <button type="submit" class="btn btn-success mt-3">Submit</button>
+</form>
+
+<script>
+    $(document).ready(function() {
+        var passengerCount = 1;
+
+        $('#addPassenger').click(function() {
+            passengerCount++;
+            var newPassengerDiv = `
+                <div class="passenger-details row mb-4" id="passenger_${passengerCount}">
+                    <div class="col-md-12">
+                        <h4 id="passengerTitle_${passengerCount}">Passenger ${passengerCount}</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="full_name_${passengerCount}">Full Name:</label>
+                            <input type="text" class="form-control" id="full_name_${passengerCount}" name="full_name_${passengerCount}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="last_name_${passengerCount}">Last Name:</label>
+                            <input type="text" class="form-control" id="last_name_${passengerCount}" name="last_name_${passengerCount}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="age_${passengerCount}">Age:</label>
+                            <input type="number" class="form-control" id="age_${passengerCount}" name="age_${passengerCount}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="gender_${passengerCount}">Gender:</label>
+                            <select class="form-control" id="gender_${passengerCount}" name="gender_${passengerCount}" required>
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="aadhar_${passengerCount}">Aadhar Card Number:</label>
+                            <input type="text" class="form-control" id="aadhar_${passengerCount}" name="aadhar_${passengerCount}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="adult_child_${passengerCount}">Adult/Child:</label>
+                            <select class="form-control" id="adult_child_${passengerCount}" name="adult_child_${passengerCount}" required>
+                                <option value="">Select</option>
+                                <option value="adult">Adult</option>
+                                <option value="child">Child</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <button type="button" class="btn btn-danger removePassenger" data-passenger="${passengerCount}">Remove Passenger</button>
+                    </div>
+                </div>`;
+            $('#passengerDetails').append(newPassengerDiv);
+        });
+
+        // Remove passenger details
+        $(document).on('click', '.removePassenger', function() {
+            var passengerId = $(this).data('passenger');
+            $('#passenger_' + passengerId).remove();
+        });
+    });
+</script>-->
+
+
+    <!--<form  action="/fetchpassenger" method="post" name="contactform1" id="bookingfor" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div id="passengerDetails">
+
+            <div class="passenger-details row mb-4" id="passenger_1">
+                <div class="col-md-12">
+                    <h4 id="passengerTitle_1">Passenger 1</h4>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="full_name_1">Full Name:</label>
+                        <input type="text" class="form-control" id="full_name_1" name="firstname" placeholder="Enter First name" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="last_name_1">Last Name:</label>
+                        <input type="text" class="form-control" id="last_name_1" name="lastname" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="age_1">Age:</label>
+                        <input type="number" class="form-control" id="age_1" name="age" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="gender_1">Gender:</label>
+                        <select class="form-control" id="gender_1" name="gender" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="aadhar_1">Aadhar Card Number:</label>
+                        <input type="text" class="form-control" id="aadhar_1" name="aadhar" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="adult_child_1">Adult/Child:</label>
+                        <select class="form-control" id="adult_child_1" name="adultchild" required>
+                            <option value="">Select</option>
+                            <option value="adult">Adult</option>
+                            <option value="child">Child</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" id="addPassenger" class="btn btn-primary mt-3">Add Passenger</button>
+       <button type="submit" class="btn btn-success mt-3" onclick="submitForm()">Submit</button>
+          <div class="comment-btn mb-2 pb-2 text-center border-b">
+              <button type="button" onclick="submitForm()" class="nir-btn w-100">Submit</button>
+          </div>
+    </form>
+</div>-->
+                                    <!--<div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group mb-2">
+                                                <label>Title</label>
+                                                <div class="input-box">
+                                                    <select class="niceSelect">
+                                                        <option value="0">Select</option>
+                                                        <option value="1">Mr.</option>
+                                                        <option value="2">Mrs.</option>
+                                                    </select>
+                                                </div>                            
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group mb-2">
+                                                <label>First Name</label>
+                                                <input type="text" placeholder="First Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group mb-2">
+                                                <label>Last Name</label>
+                                                <input type="text" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-2">
+                                                <label>Email</label>
+                                                <input type="email" placeholder="Email Address">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-2">
+                                                <label>Phone</label>
+                                                <input type="text" placeholder="Phone No.">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Gender</label>
+                                                <div class="input-box">
+                                                    <select class="niceSelect">
+                                                        <option value="0">Select Gender</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Female</option>
+                                                    </select>
+                                                </div>                            
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group mb-2">
+                                                <label>DOB</label>
+                                                <div class="input-box">
+                                                    <input id="date-range" type="date">
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="form-group mb-2">
+                                                <label>Select Country</label>
+                                                <div class="input-box">
+                                                    <select class="niceSelect">
+                                                        <option value="0">Albania</option>
+                                                        <option value="1">Malaysia</option>
+                                                        <option value="2">Singapore</option>
+                                                        <option value="3">Japan</option>
+                                                        <option value="4">Thailand</option>
+                                                    </select>
+                                                </div>                            
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="form-group mb-2">
+                                                <label>Select City</label>
+                                                <div class="input-box">
+                                                    <select class="niceSelect">
+                                                        <option value="0">Istanbul</option>
+                                                        <option value="1">London</option>
+                                                        <option value="2">Texas</option>
+                                                        <option value="3">Tokyo</option>
+                                                        <option value="4">Bangkok</option>
+                                                    </select>
+                                                </div>                            
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-2">
+                                                <label>Address Line 1</label>
+                                                <input type="text" placeholder="Address line 1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-2">
+                                                <label>Address Line 2</label>
+                                                <input type="text" placeholder="Address line 2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>-->
+                            <!--<div class="customer-information mb-4 d-flex align-items-center bg-grey rounded p-4">
+                                <i class="fa fa-grin-wink rounded fs-1 bg-theme white p-3 px-4"></i>
+
+                                    <h6 class="mb-1">Good To Know:</h6>
+                                    <small>Free Cancellation until 14:00 pn 11 Feb 2022</small>
+                                </div>
+                            </div>
+                            <div class="customer-information card-information">
+
+
+                                <div class="trending-topic-main">
+
+                                    <ul class="nav nav-tabs nav-pills nav-fill w-50 justify-content-center" id="postsTab1" role="tablist">
+                                        <li class="nav-item me-2 ms-0" role="presentation">
+                                            <button aria-controls="card" aria-selected="false" class="nav-link active" data-bs-target="#card" data-bs-toggle="tab" id="card-tab" role="tab" type="button">Debit card</button>
+                                        </li>
+
+                                            <button aria-controls="paypal" aria-selected="true" class="nav-link" data-bs-target="#paypal" data-bs-toggle="tab" id="paypal-tab" role="tab" type="button">Digital Payment</button>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content" id="postsTabContent1">
+
+                                        <div aria-labelledby="card-tab" class="tab-pane fade active show" id="card" role="tabpanel">
+                                            <form>
+
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-8">
+                                                        <div class="card-detail">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group mb-2">
+                                                                        <label>Card Holder Number</label>
+                                                                        <input type="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group mb-2">
+                                                                        <label>Card Number</label>
+                                                                        <input type="text"  id="card_number" placeholder="**** **** **** ****">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group mb-2">
+                                                                        <label>Expiry Date</label>
+                                                                        <input type="text" placeholder=" Expiry Date">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label>CVC/CVV</label>
+                                                                        <input type="text" id="cvv" placeholder="CVC/CVV">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <img src="static/images/cc.png" alt=""class="rounded">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+
+
+                                            <div class="paypal-card">
+                                                <h5 class="mb-2 border-b pb-2"><i class="fab fa-paypal"></i> Paypal</h5>
+                                                <ul class="">
+                                                    <li class="d-block">To make the payment process secure and complete you will be redirected to Paypal Website.</li>
+                                                    <li class="d-block">
+                                                        <a href="" class="theme">Checkout via Paypal <i class="fa fa-long-arrow-alt-right"></i></a>
+                                                    </li>
+                                                    <li class="d-block">The total Amount you will be charged is: <span class="fw-bold theme">$ 245.50</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>-
+                                    </div>
+                                </div>
+                                <div class="booking-terms border-t pt-3 mt-3">
+                                    <form class="d-lg-flex align-items-center">
+                                        <div class="form-group mb-2 w-75">
+                                            <input type="checkbox"> By continuing, you agree to the <a href="#">Terms and Conditions.</a>
+                                        </div>
+                                        <a href="/confirmation.html" class="nir-btn float-lg-end w-25">CONFIRM BOOKING</a>
+                                    </form>
+                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4 ps-ld-4">
+                    <div class="sidebar-sticky">
+                        <div class="sidebar-item bg-white rounded box-shadow overflow-hidden p-3 mb-4">
+                            <h4>Your Booking Details</h4>
+                            <div class="trend-full border-b pb-2 mb-2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                       <div class="trend-item2 rounded">
+                                            <a href="destination-single1.html" style="background-image: url(static/images/destination/destination17.jpg);"></a>
+                                             <div class="color-overlay"></div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 ps-0">
+                                        <div class="trend-content position-relative">
+                                            <div class="rating mb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <small>200 Reviews</small>
+                                            </div>
+                                            <h5 class="mb-1"><a href="grid-leftfilter.html">Adriatic Adventure–Zagreb To Athens</a></h5>
+                                            <h6 class="theme mb-0"><i class="icon-location-pin"></i> Croatia</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trend-check border-b pb-2">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="trend-check-item bg-grey rounded p-3 mb-2">
+                                            <p class="mb-0">Check In</p>
+                                            <h6 class="mb-0">Thu 21 Feb 2022</h6>
+                                            <small>15:00 - 22:00</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="trend-check-item bg-grey rounded p-3 mb-2">
+                                            <p class="mb-0">Check Out</p>
+                                            <h6 class="mb-0">Tue 24 Feb 2022</h6>
+                                            <small>1:00 - 10:00</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trend-check border-b pb-2 mb-2">
+                                <p class="mb-0">Total Length of Stay:</p>
+                                <h6 class="mb-0">8 Days | 7 Nights </h6>
+                                <small><a href="#" class="theme text-decoration-underline">travelling on different dates?</a></small>
+                            </div>
+                            <div class="trend-check">
+                                <p class="mb-0">You Selected:</p>
+                                <h6 class="mb-0">Superior Double Rooms <span class="float-end fw-normal">1 room, 3 adults</span> </h6>
+                                <small><a href="#" class="theme text-decoration-underline">Change your selection</a></small>
+                            </div>
+
+                        </div>  
+                        <div class="sidebar-item bg-white rounded box-shadow overflow-hidden p-3 mb-4">
+                            <h4>Your Price Summary</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td> Superior Twin</td>
+                                        <td class="theme2">$500.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Number of Travellers</td>
+                                        <td class="theme2">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tax & fee</td>
+                                        <td class="theme2">$50.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Booking Fee</td>
+                                        <td class="theme2">Free</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td class="theme2">$550.00</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="bg-title">
+                                    <tr>
+                                        <th class="font-weight-bold white">Amount</th>
+                                        <th class="font-weight-bold white">$550.00</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="sidebar-item bg-white rounded box-shadow overflow-hidden p-3 mb-4">
+                            <h4>Your Payment Schedule</h4>
+                            <p class="mb-0">Before you stay you'll pay <span class="float-end">$40.00</span></p>
+                        </div>
+
+                            <h4>Do you have a promo code?</h4>
+                            <input type="text" name="">
+                            <a href="#" class="nir-btn-black mt-2">Apply</a>
+                        </div>-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <!-- top Destination ends -->
+
+    <!-- Discount action starts -->
+    <!--<section class="discount-action pt-0" style="background-image:url(images/section-bg1.png); background-position:center;">
+        <div class="container">
+            <div class="call-banner rounded pt-10 pb-14">
+                <div class="call-banner-inner w-75 mx-auto text-center px-5">
+                    <div class="trend-content-main">
+                        <div class="trend-content mb-5 pb-2 px-5">
+                            <h5 class="mb-1 theme">Love Where Your're Going</h5>
+                            <h2><a href="detail-fullwidth.html">Explore Your Life, <span class="theme1"> Travel Where You Want!</span></a></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="video-button text-center position-relative">
+                             <div class="call-button text-center">
+                                <button type="button" class="play-btn js-video-button" data-video-id="152879427" data-channel="vimeo">
+                                    <i class="fa fa-play bg-blue"></i>
+                                </button>
+                            </div>
+                            <div class="video-figure"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div>    
+       < <div class="white-overlay"></div>
+        <div class="white-overlay"></div>
+        <div class="section-shape  top-inherit bottom-0" style="background-image: url(images/shape6.png);"></div>
+    </section>-->
+    <!-- Discount action Ends -->
+
+    <!-- partner starts -->
+    <!--<section class="our-partner pb-6 pt-6">
+        <div class="container">
+            <div class="section-title mb-6 w-75 mx-auto text-center">
+                <h4 class="mb-1 theme1">Our Partners</h4>
+                <h2 class="mb-1">Our Awesome <span class="theme">partners</span></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+            <div class="row align-items-center partner-in partner-slider">
+                <div class="col-md-3 col-sm-6">
+                    <div class="partner-item p-4 py-2 rounded bg-lgrey">
+                        <img src="images/cl-1.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="partner-item p-4 py-2 rounded bg-lgrey">
+                        <img src="static/images/cl-5.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="partner-item p-4 py-2 rounded bg-lgrey">
+                        <img src="static/images/cl-2.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="partner-item p-4 py-2 rounded bg-lgrey">
+                        <img src="static/images/cl-3.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="partner-item p-4 py-2 rounded bg-lgrey">
+                        <img src="static/images/cl-4.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="partner-item p-4 py-2 rounded bg-lgrey">
+                        <img src="static/images/cl-5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <!-- partner ends -->
+
+    <!-- footer starts -->
+    <footer class="pt-20 pb-4"  style="background-image: url(static/images/background_pattern.png);">
+        <div class="section-shape top-0" style="background-image: url(static/images/shape8.png);"></div>
+        <!-- Instagram starts -->
+       <!-- <div class="insta-main pb-10">
+            <div class="container">
+
+
+            </div>
+        </div>-->
+        <!-- Instagram ends -->
+        <div class="footer-upper pb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 pe-4" >
+                        <div class="footer-about">
+                            <img src="static/images/LOGOFinal.png" alt="">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<p class="mt-3 mb-3 white">
+                                Adventour .... Refreshing Every Trips
+                            </p>
+                            <ul>
+                                <li class="white"><strong>Contact:</strong> 9925163661 , 7383328007</li>
+                                <li class="white"><strong>Location:</strong> Isanpur, Ahmedabad, Gujarat, India</li>
+                                <li class="white"><strong>Email:</strong> ghoghatravels@gmail.com</li>
+                                <li class="white"><strong>Website:</strong> www.Adventour.com</li>
+                            </ul>
+                        </div>
+                    </div>
+<!-- col-lg-2 col-md-6 col-sm-12 mb-4 -->
+                    <div class="wlink">
+                        <div class="footer-links">
+                            <h3 class="white">Quick link</h3>
+                            <ul>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="/tourpackage">Tours & Packages</a></li>
+                                <li><a href="/privacy">Privacy Policy</a></li>
+                                <li><a href="/terms">Terms &amp; Conditions</a></li>
+                                <li><a href="/customerservice">Customer Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--<div class="col-lg-2 col-md-6 col-sm-12 mb-4">-->
+                    <!--<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Categories</h3>
+                            <ul>
+                              <li><a href="/about">Travel</a></li>
+                              <li><a href="about-us.html">Technology</a></li>
+                              <li><a href="about-us.html">Lifestyle</a></li>
+                              <li><a href="about-us.html">Destinations</a></li>
+                              <li><a href="about-us.html">Entertainment</a></li>
+                              <li><a href="about-us.html">Business</a></li>
+                            </ul>
+                        </div>
+                    </div>-->
+                    <!--<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="footer-links">
+                            <h3 class="white">Newsletter</h3>
+                            <div class="newsletter-form ">
+                                <p class="mb-3">Jin our community of over 200,000 global readers who receives emails filled with news, promotions, and other good stuff.</p>
+                                <form action="#" method="get" accept-charset="utf-8" class="border-0 d-flex align-items-center">
+                                    <input type="text" placeholder="Email Address">
+                                    <button class="nir-btn ms-2">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="footer-payment">
+            <div class="container">
+                <div class="row footer-pay align-items-center justify-content-between text-lg-start text-center">
+                    <div class="col-lg-8 footer-payment-nav mb-4">
+                        <ul class="">
+                            <li class="me-2">We Support:</li>
+                            <li class="me-2"><i class="fab fa-cc-mastercard fs-4"></i></li>
+                            <li class="me-2"><i class="fab fa-cc-paypal fs-4"></i></li>
+                            <li class="me-2"><i class="fab fa-cc-stripe fs-4"></i></li>
+                            <li class="me-2"><i class="fab fa-cc-visa fs-4"></i></li>
+                            <li class="me-2"><i class="fab fa-cc-discover fs-4"></i></li>
+                        </ul>
+                    </div>-->
+                    <!--<div class="col-lg-4 footer-payment-nav mb-4">
+                        <ul class="d-flex align-items-center">
+                            <li class="me-2 w-75">
+                                <select class="niceSelect rounded">
+                                    <option>English</option>
+                                    <option>Chinese</option>
+                                    <option>Russian</option>
+                                    <option>Japanese</option>
+                                    <option>Korean</option>
+                                </select>
+                            </li>
+                            <li class="w-25">
+                                <select class="niceSelect rounded">
+                                    <option>$ USD</option>
+                                    <option>$ AUD</option>
+                                    <option>$ YEN</option>
+                                    <option>$ IN</option>
+                                    <option>$ NP</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="copyright-inner rounded p-3 d-md-flex align-items-center justify-content-between">
+                    <div class="copyright-text">
+                        <p class="m-0 white">2024 Adventour. All rights reserved.</p>
+                    </div>
+                    <div class="social-links">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="particles-js"></div>
+    </footer>
+    <!-- footer ends -->
+    
+    <!-- Back to top start -->
+    <div id="back-to-top">
+        <a href="#"></a>
+    </div>
+    <!-- Back to top ends -->
+
+    <!-- search popup -->
+    <div id="search1">
+        <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+    <!-- login registration modal -->
+   <div class="modal fade log-reg" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="post-tabs">
+                        <!-- tab navs -->
+                        <ul class="nav nav-tabs nav-pills nav-fill" id="postsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button aria-controls="login" aria-selected="false" class="nav-link active"
+                                    data-bs-target="#login" data-bs-toggle="tab" id="login-tab" role="tab"
+                                    type="button">Login</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button aria-controls="register" aria-selected="true" class="nav-link"
+                                    data-bs-target="#register" data-bs-toggle="tab" id="register-tab" role="tab"
+                                    type="button">Register</button>
+                            </li>
+                        </ul>
+                        <!-- tab contents -->
+                        <div class="tab-content blog-full" id="postsTabContent">
+                            <!-- popular posts -->
+                            <div aria-labelledby="login-tab" class="tab-pane fade active show" id="login"
+                                role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="blog-image rounded">
+                                            <a href="#"
+                                                style="background-image: url(../static/images/travelgood.jpeg); height:450px"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h4 class="text-center border-b pb-2">Login</h4>
+                                        <div class="log-reg-button d-flex align-items-center justify-content-between">
+                                            <!--<button type="submit" class="btn btn-fb">
+                                                <i class="fab fa-facebook"></i> Login with Facebook
+                                            </button>-->
+                                            <!--<button type="submit" class="btn btn-google">
+                                                <i class="fab fa-google"></i> Login with Google
+                                            </button>-->
+                                        </div>
+                                        <!--<hr class="log-reg-hr position-relative my-4 overflow-visible">-->
+
+                                 <!--------------------- Login form ---------------------------------->
+
+
+                                        <form method="post" action="/checklogin" name="contactform2" id="contactform2">
+                                            {% csrf_token %}
+                                            <div class="form-group mb-2">
+                                                <input type="text" name="email" class="form-control" id="fname"
+                                                    placeholder="Email Address" required>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <input type="password" name="password" class="form-control"
+                                                    id="lpass" placeholder="Password" required maxlength="20">
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <input type="checkbox" class="custom-control-input" id="exampleCheck">
+                                                <label class="custom-control-label mb-0" for="exampleCheck1">Remember
+                                                    me</label>
+                                                <a class="float-end" href="/forgotpassword">Lost your password?</a>
+                                            </div>
+                                            <div class="comment-btn mb-2 pb-2 text-center border-b">
+                                                <button type="button" onclick="submitForm2()" class="nir-btn w-100">Login</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Recent posts -->
+                            <div aria-labelledby="register-tab" class="tab-pane fade" id="register" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="blog-image rounded">
+                                            <a href="#"
+                                                style="background-image: url(../static/images/indiac.jpg);"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h4 class="text-center border-b pb-2">Register</h4>
+                                        <div class="log-reg-button d-flex align-items-center justify-content-between">
+                                            <!--<button type="submit" class="btn btn-fb">
+                                                <i class="fab fa-facebook"></i> Login with Facebook
+                                            </button>
+                                            <button type="submit" class="btn btn-google">
+                                                <i class="fab fa-google"></i> Login with Google
+                                            </button>-->
+                                        </div>
+                                        <!--<hr class="log-reg-hr position-relative my-4 overflow-visible">-->
+
+                          <!------------------------------ Registration form ----------------------------------------->
+
+
+                                   <form method="post" action="/fetchsignupdata" name="contactform1" id="contactform1" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group mb-2">
+        <input type="text" name="username" class="form-control" id="fname1" placeholder="User Name">
+        <div class="error-message" id="errorUsername"></div>
+    </div>
+
+    <div class="form-group mb-2">
+        <input type="email" name="email" class="form-control" id="femail" placeholder="Email Address">
+        <div class="error-message" id="errorEmail"></div>
+    </div>
+
+    <div class="form-group mb-2">
+        <input type="password" name="password" class="form-control" id="lpass1" placeholder="Password">
+        <div class="error-message" id="errorPassword"></div>
+    </div>
+
+    <div class="form-group mb-2">
+        <input type="password" name="cpassword" class="form-control" id="lrepass" placeholder="Re-enter Password">
+        <div class="error-message" id="errorConfirmPassword"></div>
+    </div>
+
+    <div class="form-group mb-2 d-flex">
+        <input type="checkbox" class="custom-control-input" id="exampleCheck1" required>
+        <label class="custom-control-label mb-0 ms-1 lh-1" for="exampleCheck1">I have read and accept the Terms and Privacy Policy?</label>
+        <div class="error-message" id="errorTerms"></div>
+    </div>
+
+    <div class="comment-btn mb-2 pb-2 text-center border-b">
+        <button type="submit" class="nir-btn w-100" id="submitButton" onclick="submitForm()">Register</button>
+    </div>
+</form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- *Scripts* -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('card_number').addEventListener('input', function(event) {
+    var input = event.target;
+    var value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+    var maskedValue = '';
+
+    // Create groups of four digits separated by spaces
+    for (var i = 0; i < value.length; i++) {
+        if (i > 0 && i % 4 === 0) {
+            maskedValue += ' ';
+        }
+        maskedValue += '*';
+    }
+
+    input.value = maskedValue;
+});
+</script>
+    <script>
+        // Mask CVV input
+document.getElementById('cvv').addEventListener('input', function(event) {
+    var input = event.target;
+    var value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+    var maskedValue = '';
+
+    // Create the masked value with asterisks
+    for (var i = 0; i < value.length; i++) {
+        maskedValue += '*';
+    }
+
+    input.value = maskedValue;
+});
+
+
+
+    </script>
+    <script>
+
+        function submitForm2()
+    {
+      document.getElementById("contactform2").submit();
+    }
+    </script>
+    <script>
+    $(document).ready(function() {
+        var passengerCount = 1;
+
+        $('#addPassenger').click(function() {
+            passengerCount++;
+            var newPassengerDiv = `
+                <div class="passenger-details row mb-4" id="passenger_${passengerCount}">
+                    <div class="col-md-12">
+                        <h4 id="passengerTitle_${passengerCount}">Passenger ${passengerCount}</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="full_name_${passengerCount}">Full Name:</label>
+                            <input type="text" class="form-control" id="full_name_${passengerCount}" name="full_name_${passengerCount}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="last_name_${passengerCount}">Last Name:</label>
+                            <input type="text" class="form-control" id="last_name_${passengerCount}" name="last_name_${passengerCount}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="age_${passengerCount}">Age:</label>
+                            <input type="number" class="form-control" id="age_${passengerCount}" name="age_${passengerCount}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="gender_${passengerCount}">Gender:</label>
+                            <select class="form-control" id="gender_${passengerCount}" name="gender_${passengerCount}" required>
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="aadhar_${passengerCount}">Aadhar Card Number:</label>
+                            <input type="text" class="form-control" id="aadhar_${passengerCount}" name="aadhar_${passengerCount}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="adult_child_${passengerCount}">Adult/Child:</label>
+                            <select class="form-control" id="adult_child_${passengerCount}" name="adult_child_${passengerCount}" required>
+                                <option value="">Select</option>
+                                <option value="adult">Adult</option>
+                                <option value="child">Child</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <button type="button" class="btn btn-danger removePassenger" data-passenger="${passengerCount}">Remove Passenger</button>
+                    </div>
+
+                </div>;
+            $('#passengerDetails').append(newPassengerDiv);
+        });
+
+        // Remove passenger details
+        $(document).on('click', '.removePassenger', function() {
+            var passengerId = $(this).data('passenger');
+            $('#passenger_' + passengerId).remove();
+        });
+    });
+</script>
+<script>
+    // function to submit form
+    function submitForm()
+    {
+        document.getElementById("bookingfor").submit();
+    }
+
+</script>
+    <script src="static/js/jquery-3.5.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/particles.js"></script>
+    <script src="static/js/particlerun.js"></script>
+    <script src="static/js/plugin.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/custom-swiper.js"></script>
+    <script src="static/js/custom-nav.js"></script>
+
+
+
+</body>
+</html>

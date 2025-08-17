@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Travelin Responsive HTML Admin Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="Travelin">
+
+	<title>Adventour</title>
+    <script>
+        function confirmDelete() {
+            // Display a confirmation dialog
+            var result = confirm("Are you sure you want to delete?");
+
+            // If user clicks OK, proceed with deletion
+            if (result) {
+                // Add your deletion logic here
+                alert("Item deleted!"); // This is just an example, replace with your actual deletion logic
+            }
+        }
+    </script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- End fonts -->
+
+	<!-- core:css -->
+	<link rel="stylesheet" href="static/assets/vendors/core/core.css">
+	<!-- endinject -->
+
+	<!-- Plugin css for this page -->
+  <link rel="stylesheet" href="static/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+	<!-- End plugin css for this page -->
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="static/assets/fonts/feather-font/css/iconfont.css">
+	<!-- endinject -->
+
+  <!-- Layout styles -->
+	<link rel="stylesheet" href="static/assets/css/style.css">
+  <!-- End layout styles -->
+
+  <link rel="shortcut icon" href="static/images/LOGOFinal.png" />
+</head>
+<body>
+
+	<div class="main-wrapper">
+
+		<!-- sidebar starts -->
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-brand">
+          <!--<img src="../static/images/LOGOFinal.png" alt="logo"  height="65px" width="100px">-->
+
+          <p>Adventour</p>
+        </a>
+        <div class="sidebar-toggler not-active">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="sidebar-body">
+        <ul class="nav">
+          <li class="nav-item active">
+            <a href="/dash" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Dashboard</span>
+            </a>
+          </li>
+<!--
+          <li class="nav-item">
+
+            <a href="slider.html" class="nav-link">
+              <i class="link-icon" data-feather="sliders"></i>
+              <span class="link-title">Sliders Section</span>
+            </a>
+          </li>-->
+
+
+
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#place" role="button" aria-expanded="false" aria-controls="place">
+              <i class="link-icon" data-feather="list"></i>
+              <span class="link-title">Manage Place</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="place">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="/stateurl" class="nav-link">State</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/cityurl" class="nav-link">City</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
+
+            <a href="/hotel" class="nav-link">
+              <i class="link-icon" data-feather="square"></i>
+              <span class="link-title">Hotel</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/itinerary" class="nav-link">
+              <i class="link-icon" data-feather="square"></i>
+              <span class="link-title">Manage Itinerary</span>
+            </a>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a href="/Duration" class="nav-link">
+              <i class="link-icon" data-feather="square"></i>
+              <span class="link-title">Manage Duration</span>
+            </a>
+          </li>
+
+           <li class="nav-item">
+            <a href="/ct" class="nav-link">
+              <i class="link-icon" data-feather="square"></i>
+              <span class="link-title">Manage Inquiry</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/category" class="nav-link">
+              <i class="link-icon" data-feather="square"></i>
+              <span class="link-title">Manage Category</span>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="/review" class="nav-link">
+              <i class="link-icon" data-feather="sliders"></i>
+              <span class="link-title">Manage Review</span>
+            </a>
+          </li>
+
+
+
+
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#package" role="button" aria-expanded="false" aria-controls="package">
+              <i class="link-icon" data-feather="list"></i>
+              <span class="link-title">Manage Package</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="package">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="/events" class="nav-link">Package List</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/addevents" class="nav-link">Add Package</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/trip" class="nav-link">Trip List</a>
+                </li>
+                 <li class="nav-item">
+                  <a href="/addtrip" class="nav-link">Add Trip</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#book" role="button" aria-expanded="false" aria-controls="book">
+              <i class="link-icon" data-feather="list"></i>
+              <span class="link-title">Manage Booking</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="book">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="/bcrud" class="nav-link">Booking List</a>
+                </li>
+                 <!--<li class="nav-item">
+                  <a href="/addtrip" class="nav-link"> Confirm Bookings</a>
+                </li>-->
+                <li class="nav-item">
+                  <a href="/passengerl" class="nav-link">Passenger List</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="/adate" class="nav-link">
+              <i class="link-icon" data-feather="layout"></i>
+              <span class="link-title">Available Slots</span>
+            </a>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a href="/about-sec" class="nav-link">
+              <i class="link-icon" data-feather="table"></i>
+              <span class="link-title">About</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/Coupon" class="nav-link">
+              <i class="link-icon" data-feather="gift"></i>
+              <span class="link-title">Coupons</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#users" role="button" aria-expanded="false" aria-controls="users">
+              <i class="link-icon" data-feather="user"></i>
+              <span class="link-title">User Management</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="users">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="/userslist" class="nav-link">All User Lists</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!--<li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#setting" role="button" aria-expanded="false" aria-controls="setting">
+              <i class="link-icon" data-feather="settings"></i>
+              <span class="link-title">Settings</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="setting">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="company-profile.html" class="nav-link">Company Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a href="role-manange-list.html" class="nav-link">Role Management</a>
+                </li>
+                <li class="nav-item">
+                  <a href="configuration.html" class="nav-link">Configuration</a>
+                </li>
+              </ul>
+            </div>
+          </li>-->
+
+        </ul>
+      </div>
+    </nav>
+    <!-- sidebar Ends -->
+
+		<div class="page-wrapper">
+
+			<!-- navbar Starts -->
+			<!--<nav class="navbar">
+				<a href="#" class="sidebar-toggler">
+					<i data-feather="menu"></i>
+				</a>
+				<div class="navbar-content">
+					<form class="search-form w-25">
+						<div class="input-group">
+              <div class="input-group-text">
+                <i data-feather="search"></i>
+              </div>
+							<input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
+						</div>
+					</form>
+					<ul class="navbar-nav">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i data-feather="bell"></i>
+								<div class="indicator">
+									<div class="circle"></div>
+								</div>
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="notificationDropdown">
+								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+									<p>6 New Notifications</p>
+									<a class="text-muted">Clear all</a>
+								</div>
+                <div class="p-1">
+                  <a class="dropdown-item d-flex align-items-center py-2">
+                    <div class="wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="gift"></i>
+                    </div>
+                    <div class="flex-grow-1 me-2">
+											<p>New Order Recieved</p>
+											<p class="tx-12 text-muted">30 min ago</p>
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center py-2">
+                    <div class="wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
+											<i class="icon-sm text-white" data-feather="alert-circle"></i>
+                    </div>
+                    <div class="flex-grow-1 me-2">
+											<p>Server Limit Reached!</p>
+											<p class="tx-12 text-muted">1 hrs ago</p>
+                    </div>
+                  </a>
+                </div>
+								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+									<a>View all</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img class="wd-30 ht-30 rounded-circle" src="../images/reviewer/1.jpg" alt="profile">
+							</a>
+							<div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
+								<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
+									<div class="mb-3">
+										<img class="wd-80 ht-80 rounded-circle" src="../images/reviewer/1.jpg" alt="">
+									</div>
+									<div class="text-center">
+										<p class="tx-16 fw-bolder">Nelson Kelly Burton</p>
+										<p class="tx-12 text-muted">nelsonn@gmail.com</p>
+									</div>
+								</div>
+                <ul class="list-unstyled p-1">
+                  <li class="dropdown-item py-2">
+                    <a href="profile.html" class="text-body ms-0">
+                      <i class="me-2 icon-md" data-feather="user"></i>
+                      <span>Profile</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item py-2">
+                    <a class="text-body ms-0">
+                      <i class="me-2 icon-md" data-feather="edit"></i>
+                      <span>Edit Profile</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item py-2">
+                    <a class="text-body ms-0">
+                      <i class="me-2 icon-md" data-feather="repeat"></i>
+                      <span>Switch User</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item py-2">
+                    <a class="text-body ms-0">
+                      <i class="me-2 icon-md" data-feather="log-out"></i>
+                      <span>Log Out</span>
+                    </a>
+                  </li>
+                </ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>-->
+			<!-- navbar Ends -->
+
+      <!-- Page Content Starts -->
+          {% csrf_token %}
+			<div class="page-content">
+
+				<nav class="page-breadcrumb d-flex align-items-center justify-content-between">
+					<ol class="breadcrumb mb-0">
+						<li class="breadcrumb-item"><a href="/dash">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/review">Review</a></li>
+						<!--<li class="breadcrumb-item active" aria-current="page">Duration</li>-->
+					</ol>
+         <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addslider"><i class="link-icon" data-feather="plus"></i> Add Slots</button>-->
+				</nav>
+
+        <div class="search-box p-4 bg-white rounded mb-3 box-shadow">
+          <form class="forms-sample">
+            <div class="row align-items-center">
+              <div class="col-lg-3">
+                <h5>Review lists</h5>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <input type="text"  id="searchInput" placeholder="Search by review " class="form-control">
+              </div>
+             <!-- <div class="col-lg-3 col-md-4">
+                <select class="form-select form-select-lg">
+                  <option selected>Category</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="col-lg-2 col-md-4">
+                <select class="form-select form-select-lg">
+                  <option selected>Show Entries</option>
+                  <option value="1">10</option>
+                  <option value="2">20</option>
+                  <option value="3">30</option>
+                </select>
+              </div>-->
+            </div>
+          </form>
+        </div>
+
+				<div class="row">
+
+					<div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table id="dataTableExample" class="table">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>TRIP</th>
+                        <th>NAME</th>
+                        <th>EMAIL</th>
+                        <th>COMMENT</th>
+                        <th>RATING</th>
+                      </tr>
+                    </thead>
+                    <tbody id="avTable">
+                    {% for i in rdata %}
+                      <tr>
+
+                        <td>{{i.id}}</td>
+
+
+                        <td>{{i.trip}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.comment}}</td>
+                        <td>{{i.rating}}</td>
+                        <td class="text-center">
+                          <ul class="d-flex list-unstyled mb-0">
+                            <!--<li class="me-2"><a href=""  data-bs-target="#addslider"><i class="link-icon"  data-feather="edit"></i></a></li>-->
+                             <!-- <li class="me-2">
+    <a href="" data-bs-toggle="modal" data-bs-target="#updateModal{{i.id}}"><i class="link-icon" data-feather="edit"></i></a>
+</li>
+
+<div class="modal fade" id="updateModal{{i.id}}" tabindex="-1" aria-labelledby="updateModalLabel{{i.id}}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel{{i.id}}">Update Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/updateadate/{{i.id}}" method="post" onsubmit="return validateUpdateForm{{i.id}}()">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="selectTrip{{i.id}}" class="form-label">Select Trip</label>
+                        <select class="form-select form-select-lg" id="selectTrip{{i.id}}" name="selecttrip">
+                            {% for trip in tripdata %}
+                            <option value="{{ trip.id }}">{{ trip.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div id="datepickerContainer{{i.id}}">
+                                <label for="date{{i.id}}">Select Date</label>
+                                <div class="input-group date datepicker" id="datePicker{{i.id}}">
+                                    <input type="text" class="form-control" name="date" id="date{{i.id}}">
+                                    <span class="input-group-text input-group-addon"><i data-feather="calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="slotsInput{{i.id}}" class="form-label">No. Of Slots</label>
+                        <input type="text" class="form-control" id="slotsInput{{i.id}}" autocomplete="off" placeholder="Enter Slots" name="slotsnumber">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function validateUpdateForm{{i.id}}() {
+        var selectTrip = document.getElementById("selectTrip{{i.id}}");
+        var date = document.getElementById("date{{i.id}}");
+        var slotsNumber = document.getElementById("slotsInput{{i.id}}");
+
+        // Validation for Select Trip
+        if (selectTrip.value === "") {
+            alert("Please select a trip.");
+            return false;
+        }
+
+     var enteredDate = new Date(dateInput.value);
+        if (isNaN(enteredDate.getTime())) {
+            alert("Please enter a valid date.");
+            return false;
+        }
+        // Validation for Date (you can add specific date validations if needed)
+
+        // Validation for Number of Slots
+        if (isNaN(slotsNumber.value) || parseInt(slotsNumber.value) < 0) {
+            alert("Please enter a valid number of slots.");
+            return false;
+        }
+
+        // All validations passed
+        return true;
+    }
+</script>-->
+
+
+
+                           <!-- <li><a href="#"><i class="link-icon"  data-feather="delete"></i></a></li>-->
+                              <li class="me-2"><a href="" data-bs-toggle="modal" data-bs-target="#deleteModal{{i.id}}"><i class="link-icon" data-feather="delete"></i></a></li>
+                                <div class="modal fade" id="deleteModal{{i.id}}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteModalLabel">Delete Review</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <!-- Add your form or content for updating values here -->
+                                        <form action="/deleter/{{i.id}}" method="post">
+                                          {% csrf_token %}
+                                          <!-- Your form fields go here -->
+                                          <div class="mb-3">
+                                            <label for="deleteInput" class="form-label">Want to delete?</label>
+                                            <input type="text" class="form-control" id="deleteInput" name="cname" value="{{i.trip}}">
+                                          </div>
+
+                                          <div class="mb-3">
+                                            <label for="deleteInput" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="deleteInput" name="cname" value="{{i.name}}">
+                                          </div>
+
+                                          <div class="mb-3">
+                                            <label for="deleteInput" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="deleteInput" name="cname" value="{{i.email}}">
+                                          </div>
+
+                                            <div class="mb-3">
+                                            <label for="deleteInput" class="form-label">Comment</label>
+                                            <input type="text" class="form-control" id="deleteInput" name="cname" value="{{i.comment}}">
+                                          </div>
+                                         <div class="mb-3">
+                                            <label for="deleteInput" class="form-label">Rating</label>
+                                            <input type="text" class="form-control" id="deleteInput" name="cname" value="{{i.rating}}">
+                                          </div>
+
+
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary" onclick="confirmDelete()">Delete</button>
+                                      </div>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+
+                          </ul>
+                        </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                        <!--<td class="text-center">
+                          <span class="form-check form-switch"><input type="checkbox" class="form-check-input" id="formSwitch1"></span>
+                        </td>-->
+
+
+                      <!--<tr>
+                        <td>travel12</td>
+                        <td>2022/04/25</td>
+                        <td class="text-center">
+                          <i class="link-icon" data-feather="award">
+                        </td>
+                        <td>Top Destination</td>
+                        <td>
+                          <span class="tags">trip</span>
+                          <span class="tags">tour</span>
+                          <span class="tags">journey</span>
+                          <span class="tags">trending</span>
+                          <span class="tags">scenary</span>
+                        </td>
+                        <td class="text-center">
+                          <span class="form-check form-switch"><input type="checkbox" class="form-check-input" id="formSwitch1"></span>
+                        </td>
+                        <td class="text-center">
+                          <ul class="d-flex list-unstyled mb-0">
+                            <li class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#addslider"><i class="link-icon"  data-feather="edit"></i></a></li>
+                            <li><a href="#"><i class="link-icon"  data-feather="delete"></i></a></li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>travel12</td>
+                        <td>2022/04/25</td>
+                        <td class="text-center">
+                          <i class="link-icon" data-feather="award">
+                        </td>
+                        <td>Top Destination</td>
+                        <td>
+                          <span class="tags">trip</span>
+                          <span class="tags">tour</span>
+                          <span class="tags">journey</span>
+                          <span class="tags">trending</span>
+                          <span class="tags">scenary</span>
+                        </td>
+                        <td class="text-center">
+                          <span class="form-check form-switch"><input type="checkbox" class="form-check-input" id="formSwitch1"></span>
+                        </td>
+                        <td class="text-center">
+                          <ul class="d-flex list-unstyled mb-0">
+                            <li class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#addslider"><i class="link-icon"  data-feather="edit"></i></a></li>
+                            <li><a href="#"><i class="link-icon"  data-feather="delete"></i></a></li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>travel12</td>
+                        <td>2022/04/25</td>
+                        <td class="text-center">
+                          <i class="link-icon" data-feather="award">
+                        </td>
+                        <td>Top Destination</td>
+                        <td>
+                          <span class="tags">trip</span>
+                          <span class="tags">tour</span>
+                          <span class="tags">journey</span>
+                          <span class="tags">trending</span>
+                          <span class="tags">scenary</span>
+                        </td>
+                        <td class="text-center">
+                          <span class="form-check form-switch"><input type="checkbox" class="form-check-input" id="formSwitch1"></span>
+                        </td>
+                        <td class="text-center">
+                          <ul class="d-flex list-unstyled mb-0">
+                            <li class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#addslider"><i class="link-icon"  data-feather="edit"></i></a></li>
+                            <li><a href="#"><i class="link-icon"  data-feather="delete"></i></a></li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>travel12</td>
+                        <td>2022/04/25</td>
+                        <td class="text-center">
+                          <i class="link-icon" data-feather="award">
+                        </td>
+                        <td>Top Destination</td>
+                        <td>
+                          <span class="tags">trip</span>
+                          <span class="tags">tour</span>
+                          <span class="tags">journey</span>
+                          <span class="tags">trending</span>
+                          <span class="tags">scenary</span>
+                        </td>
+                        <td class="text-center">
+                          <span class="form-check form-switch"><input type="checkbox" class="form-check-input" id="formSwitch1"></span>
+                        </td>
+                        <td class="text-center">
+                          <ul class="d-flex list-unstyled mb-0">
+                            <li class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#addslider"><i class="link-icon"  data-feather="edit"></i></a></li>
+                            <li><a href="#"><i class="link-icon"  data-feather="delete"></i></a></li>
+                          </ul>
+                        </td>
+                      </tr>-->
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+					</div>
+				</div>
+
+       <!-- <div class="row">
+          <div class="dataTables_paginate">
+                <ul class="pagination">
+                  <li class="paginate_button page-item">
+                    <a href="#" class="page-link">Previous</a>
+                  </li>
+                  <li class="paginate_button page-item active"><a href="#" class="page-link">1</a></li>
+                  <li class="paginate_button page-item"><a href="#" class="page-link">2</a></li>
+                  <li class="paginate_button page-item"><a href="#" class="page-link">3</a></li>
+                  <li class="paginate_button page-item"><a href="#" class="page-link">Next</a></li>
+                </ul>
+            </div>
+        </div>-->
+
+			</div>
+      <!-- Page Content Ends -->
+
+			<!-- footer Starts -->
+     <!-- <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
+        <p class="text-muted mb-1 mb-md-0">Copyright © 2022 <a href="../index.html" target="_blank">Travelin</a>.</p>
+        <p class="text-muted">Powered By <i class="mb-1 text-primary ms-1 icon-sm" data-feather="heart"></i> Bizberg Themes</p>
+      </footer>-->
+      <!-- footer Ends -->
+
+		</div>
+	</div>
+
+
+
+
+
+	<!-- core:js -->
+  <script src="static/assets/vendors/core/core.js"></script>
+    <!--<script>
+    $(document).ready(function() {
+        'use strict';
+
+        if ($('#datePicker').length) {
+            var selectedDate = new Date();
+
+            // Initialize the datepicker
+            $('#datePicker').datepicker({
+                format: "yyyy-mm-dd",
+                todayHighlight: true,
+                autoclose: true
+            }).datepicker('setDate', selectedDate);
+
+            function sendDateToBackend() {
+                var selectedDateFormatted = $('#date').val();
+
+                // Send formatted date to the backend using AJAX or by appending it to the URL
+                // Example AJAX request:
+                $.ajax({
+                    url: '/fetchdate',
+                    method: 'GET',
+                    data: {
+                        selected_date: selectedDateFormatted
+                    },
+                    success: function(response) {
+                        // Handle success response from the backend
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error response from the backend
+                    }
+                });
+            }
+
+            // Example: Send date to the backend when the button is clicked
+            $('#submitDateButton').on('click', function() {
+                sendDateToBackend();
+            });
+        }
+    });
+</script>-->
+<script>
+$(document).ready(function() {
+    'use strict';
+
+    if ($('#datePicker').length) {
+        var selectedDate = new Date();
+
+        // Initialize the first datepicker
+        $('#datePicker').datepicker({
+            format: "yyyy-mm-dd",
+            todayHighlight: true,
+            autoclose: true
+        }).datepicker('setDate', selectedDate);
+    }
+
+    if ($('#datePicker2').length) {
+        var selectedDate2 = new Date();
+
+        // Initialize the second datepicker
+        $('#datePicker2').datepicker({
+            format: "yyyy-mm-dd",
+            todayHighlight: true,
+            autoclose: true
+        }).datepicker('setDate', selectedDate2);
+    }
+
+    // Function to send date to the backend
+    function sendDateToBackend(dateId) {
+        var selectedDateFormatted = $('#' + dateId).val();
+
+        // Example AJAX request:
+        $.ajax({
+            url: '/fetchdate',
+            method: 'GET',
+            data: {
+                selected_date: selectedDateFormatted
+            },
+            success: function(response) {
+                // Handle success response from the backend
+            },
+            error: function(xhr, status, error) {
+                // Handle error response from the backend
+            }
+        });
+    }
+
+    // Example: Send date to the backend when the button is clicked for the first datepicker
+    $('#submitDateButton').on('click', function() {
+        sendDateToBackend('date');
+    });
+
+    // Example: Send date to the backend when the button is clicked for the second datepicker
+    $('#submitDateButton2').on('click', function() {
+        sendDateToBackend('date2');
+    });
+});
+
+
+</script>
+
+    <script>
+        // Function to filter the table rows based on input value
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("avTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1]; // Column index of the name
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // Attach the filterTable function to the input's onchange event
+        document.getElementById("searchInput").oninput = filterTable;
+    </script>
+
+
+  <!-- endinject -->
+
+  <!-- Plugin js for this page -->
+  <script src="static/assets/vendors/jquery-tags-input/jquery.tagsinput.min.js"></script>
+  <script src="static/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <!-- End plugin js for this page -->
+
+  <!-- inject:js -->
+  <script src="static/assets/vendors/feather-icons/feather.min.js"></script>
+  <script src="static/assets/js/template.js"></script>
+  <!-- endinject -->
+
+  <!-- Custom js for this page -->
+  <script src="static/assets/js/datepicker.js"></script>
+  <script src="static/assets/js/tags-input.js"></script>
+  <!-- End custom js for this page -->
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ destination.city.name }} - Destination Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .destination-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="destination-container">
+        <h1>{{ destination.city.name }}</h1>
+        <p><strong>Trip:</strong> {{ destination.trip }}</p>
+        <p><strong>Duration:</strong> {{ destination.duration }} days</p>
+        <p><strong>Hotel:</strong> {{ destination.hotel.name }}</p>
+        <p><strong>Rating:</strong> ⭐{{ destination.hotel.rating }}</p>
+    </div>
+
+</body>
+</html>
