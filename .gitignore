@@ -1,39 +1,26 @@
-# Python
-*.pyc
-*.pyo
-*.pyd
+# Byte-compiled / cache
 __pycache__/
-*.so
+*.py[cod]
+*$py.class
 
-# Django
+# Django stuff
 *.log
 *.pot
-*.py[cod]
+*.pyc
 *.sqlite3
 db.sqlite3
-media
-staticfiles
-*.mo
+/media/
+staticfiles/
 
-# Environment
+# Environments
 .env
 venv/
 .venv/
-env/
-ENV/
-*.env
 
 # IDEs
 .vscode/
 .idea/
-*.swp
-*~
 
-# OS files
+# OS junk
 .DS_Store
 Thumbs.db
-*.sqlite3
-db.sqlite3
-venv/
-.venv/
-.idea/
